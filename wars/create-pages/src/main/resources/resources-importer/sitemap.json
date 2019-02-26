@@ -1,0 +1,19 @@
+{
+  "layoutTemplateId": "1_column",
+  "publicPages": [
+    {
+      "friendlyURL": "/home",
+      "name": "Triberay Vue Instagram Portlet Example",
+      "title": "Triberay Vue Instagram Portlet Example",
+      "typeSettings": "lfr-theme:regular:regularInheritLookAndFeel=false",
+      "inheritLookAndFeel": "false",
+      "columns": [
+        [
+          {
+            "portletId": "triberayvueinstagram"
+          }
+        ]
+      ]
+    }
+  ]
+}
