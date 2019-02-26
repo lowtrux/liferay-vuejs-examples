@@ -1,34 +1,14 @@
 import Vue from 'vue/dist/vue.common';
+import App from './App.vue';
+import Home from './Home.vue';
 
 export default function(portletNamespace) {
+
+	Vue.component('app-server-status', Home);
+
 	new Vue({
 		el: `#${portletNamespace}-1`,
-		data: {
-			message: 'Hello from Vue.js!',
-		},
-		methods: {
-			reverseMessage: function() {
-				this.message = this.message
-					.split('')
-					.reverse()
-					.join('');
-			},
-		},
-	});
-
-	Vue.component('todo-item', {
-		props: ['todo'],
-		template: '<li>{{ todo.text }}</li>',
-	});
-
-	new Vue({
-		el: `#${portletNamespace}-2`,
-		data: {
-			groceryList: [
-				{ id: 0, text: 'Vegetables' },
-				{ id: 1, text: 'Cheese' },
-				{ id: 2, text: 'Whatever else humans are supposed to eat' },
-			],
-		},
+		render: h => h(App)
 	});
 }
+
