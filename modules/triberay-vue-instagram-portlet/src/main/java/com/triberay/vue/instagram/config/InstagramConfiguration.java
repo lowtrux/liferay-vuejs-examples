@@ -11,6 +11,6 @@ import com.triberay.vue.instagram.constants.InstagramKeys;
 )
 public interface InstagramConfiguration {
 
-	@Meta.AD(required = false)
+	@Meta.AD(required = false, deflt = "")
 	public String accessToken();
 }
