@@ -14,10 +14,11 @@ export default function(portletNamespace, accessToken) {
 	});
 }
 
-new Vue({
+/*new Vue({
 	el: `#devapp`,
 	render: h => h(App),
 	mounted() {
-		eventBus.$emit('setToken', 'replaceToTestInWebpackDevServer');
+		eventBus.$emit('setToken', '11085243931.be0cab3.7c1308b479ee488482f740ffc90f3cdd');
 	}
 });
+*/
