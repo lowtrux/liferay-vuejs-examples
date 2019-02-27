@@ -1,14 +1,23 @@
 import Vue from 'vue/dist/vue.common';
 import App from './App.vue';
-import Home from './Home.vue';
 
-export default function(portletNamespace) {
+export const eventBus = new Vue();
 
-	Vue.component('app-server-status', Home);
+export default function(portletNamespace, accessToken) {
 
 	new Vue({
 		el: `#${portletNamespace}-1`,
-		render: h => h(App)
+		render: h => h(App),
+		mounted() {
+			eventBus.$emit('setToken', accessToken);
+		}
 	});
 }
 
+new Vue({
+	el: `#devapp`,
+	render: h => h(App),
+	mounted() {
+		eventBus.$emit('setToken', 'replaceToTestInWebpackDevServer');
+	}
+});

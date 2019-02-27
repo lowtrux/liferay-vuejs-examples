@@ -3,7 +3,7 @@ var webpack = require('webpack')
 const VueLoaderPlugin = require('vue-loader/lib/plugin')
 
 module.exports = {
-  entry: './dev/index.es.js',
+  entry: './src/main/resources/META-INF/resources/lib/index.es.js',
   output: {
     path: path.resolve(__dirname, './dist'),
     publicPath: '/dist/',
