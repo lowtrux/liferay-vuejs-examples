@@ -3,10 +3,31 @@
   "publicPages": [
     {
       "friendlyURL": "/home",
-      "name": "Triberay Vue Instagram Portlet Example",
-      "title": "Triberay Vue Instagram Portlet Example",
+      "name": "Triberay Vue Examples: SVG Graph & Tree View",
+      "title": "Triberay Vue Examples: SVG Graph & Tree View",
       "typeSettings": "lfr-theme:regular:regularInheritLookAndFeel=false",
       "inheritLookAndFeel": "false",
+      "layoutTemplateId": "2_columns_i",
+      "columns": [
+        [
+          {
+            "portletId": "triberayvuesvg"
+          }
+        ],
+        [
+          {
+            "portletId": "triberayvuetreeview"
+          }
+        ]
+      ]
+    },
+    {
+      "friendlyURL": "/instagram",
+      "name": "Instagram Portlet",
+      "title": "Instagram Portlet",
+      "typeSettings": "lfr-theme:regular:regularInheritLookAndFeel=false",
+      "inheritLookAndFeel": "false",
+      "layoutTemplateId": "1_column",
       "columns": [
         [
           {
@@ -17,3 +38,6 @@
     }
   ]
 }
+
+
+
