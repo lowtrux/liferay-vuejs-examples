@@ -1,16 +1,28 @@
 {
 	"dependencies": {
-		"vue": "2.4.4"
+		"vue": "2.6.7"
 	},
 	"devDependencies": {
-		"babel-cli": "^6.26.0",
-		"babel-preset-env": "^1.7.0",
-		"liferay-npm-bundler": "^2.0.0"
+		"@babel/preset-env": "^7.3.1",
+		"@vue/cli-plugin-babel": "^3.4.1",
+		"@vue/cli-plugin-eslint": "^3.4.1",
+		"@vue/cli-service": "^3.4.1",
+		"liferay-npm-bundler": "^2.6.2",
+		"eslint": "^5.14.1",
+		"eslint-plugin-vue": "^5.2.2",
+		"vue-template-compiler": "2.6.7",
+		"cross-env": "^5.0.5",
+		"node-sass": "^4.11.0",
+		"sass-loader": "^7.1.0",
+		"webpack": "^4.29.5",
+		"webpack-cli": "^3.2.3",
+		"webpack-dev-server": "^3.2.0"
 	},
-	"main": "lib/index.es.js",
+	"main": "lib/index.common",
 	"name": "triberay-vue-svg-portlet",
 	"scripts": {
-		"build": "babel --source-maps -d build/resources/main/META-INF/resources src/main/resources/META-INF/resources && liferay-npm-bundler"
+		"dev": "cross-env NODE_ENV=development webpack-dev-server --open --hot --content-base dev/",
+		"build": "vue-cli-service build --dest build/resources/main/META-INF/resources/lib --formats commonjs --target lib --name index src/main/resources/META-INF/resources/**/*.js && liferay-npm-bundler"
 	},
 	"version": "1.0.0"
 }
