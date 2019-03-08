@@ -21,7 +21,7 @@ import org.osgi.service.component.annotations.Reference;
 @Component(
 	immediate = true,
 	property = {
-		"com.liferay.portlet.display-category=category.sample",
+		"com.liferay.portlet.display-category=category.triberay",
 		"com.liferay.portlet.instanceable=true",
 		"com.liferay.portlet.header-portlet-css=/css/main.css",
 		"javax.portlet.init-param.template-path=/",
