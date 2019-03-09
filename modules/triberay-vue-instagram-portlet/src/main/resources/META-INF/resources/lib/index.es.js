@@ -1,5 +1,5 @@
 import Vue from 'vue/dist/vue.common';
-import App from './App.vue';
+import App from './Main.vue';
 
 export const eventBus = new Vue();
 

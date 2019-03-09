@@ -1,21 +1,25 @@
 <template>
-    <div class="instagramFeed">
-        <div v-for="feed in feeds" class="instagramPost">
-            <div class="innerIPWrapper">
-                <div class="innerIP"
-                     :style="{backgroundImage: 'url(' + feed.images.standard_resolution.url + ')'}"
-                     :alt="getTitle(feed.caption)"
-                     :title="getTitle(feed.caption)"
-                     @click="openUrl(feed.link)" />
-            </div>
-        </div>
-        <div v-if="!token">
-            To use this portlet, please set an Instagram Access Token in the Configuration of this portlet
-        </div>
-        <div v-if="error">
-            Error: {{ error }}
-        </div>
+  <div class="instagramFeed">
+    <div
+      v-for="feed in feeds"
+      class="instagramPost"
+    >
+      <div class="innerIPWrapper">
+        <div
+          class="innerIP"
+          :style="{backgroundImage: 'url(' + feed.images.standard_resolution.url + ')'}"
+          :alt="getTitle(feed.caption)"
+          :title="getTitle(feed.caption)"
+          @click="openUrl(feed.link)"></div>
+      </div>
     </div>
+    <div v-if="!token">
+      To use this portlet, please set an Instagram Access Token in the Configuration of this portlet
+    </div>
+    <div v-if="error">
+      Error: {{ error }}
+    </div>
+  </div>
 </template>
 
 <script>

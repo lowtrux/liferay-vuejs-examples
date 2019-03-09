@@ -24,6 +24,7 @@ import org.osgi.service.component.annotations.Reference;
 	immediate = true,
 	property = {
 		"com.liferay.portlet.display-category=category.triberay",
+		"com.liferay.fragment.entry.processor.portlet.alias=" + InstagramKeys.InstagramPortletKey,
 		"com.liferay.portlet.instanceable=true",
 		"com.liferay.portlet.header-portlet-css=/css/main.css",
 		"javax.portlet.init-param.template-path=/",
