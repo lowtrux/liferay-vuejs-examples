@@ -1,0 +1,5 @@
+Bundle-Name: triberay-vue-components-portlet
+Bundle-SymbolicName: triberay.vue.components.portlet
+Bundle-Version: 1.0.0
+Export-Package: triberay.vue.components.portlet.constants
+Web-ContextPath: /triberay-vue-components-portlet
