@@ -1,5 +1,5 @@
 Bundle-Name: triberay-vue-treeview-portlet
-Bundle-SymbolicName: triberay.vue.treeview.portlet
+Bundle-SymbolicName: com.triberay.vue.treeview.portlet
 Bundle-Version: 1.0.0
-Export-Package: triberay.vue.treeview.portlet.constants
+Export-Package: com.triberay.vue.treeview.portlet.constants
 Web-ContextPath: /triberay-vue-treeview-portlet

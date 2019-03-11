@@ -1,6 +1,6 @@
-package triberay.vue.svg.portlet.portlet;
+package com.triberay.vue.treeview.portlet;
 
-import triberay.vue.svg.portlet.constants.TriberayVueSvgPortletKeys;
+import com.triberay.vue.treeview.portlet.constants.VueTreeViewPortletKeys;
 
 import com.liferay.frontend.js.loader.modules.extender.npm.NPMResolver;
 import com.liferay.portal.kernel.portlet.bridges.mvc.MVCPortlet;
@@ -21,18 +21,18 @@ import org.osgi.service.component.annotations.Reference;
 @Component(
 	immediate = true,
 	property = {
-		"com.liferay.portlet.display-category=category.triberay",
+		"com.liferay.portlet.display-category=category.triberayexamples",
 		"com.liferay.portlet.instanceable=true",
-		"com.liferay.portlet.header-portlet-css=/lib/index.css",
+		"com.liferay.portlet.header-portlet-css=/css/main.css",
 		"javax.portlet.init-param.template-path=/",
 		"javax.portlet.init-param.view-template=/view.jsp",
-		"javax.portlet.name=" + TriberayVueSvgPortletKeys.TriberayVueSvg,
+		"javax.portlet.name=" + VueTreeViewPortletKeys.TriberayVueTreeview,
 		"javax.portlet.resource-bundle=content.Language",
 		"javax.portlet.security-role-ref=power-user,user"
 	},
 	service = Portlet.class
 )
-public class TriberayVueSvgPortlet extends MVCPortlet {
+public class VueTreeViewPortlet extends MVCPortlet {
 
 	@Override
 	public void doView(
@@ -41,7 +41,7 @@ public class TriberayVueSvgPortlet extends MVCPortlet {
 
 		renderRequest.setAttribute(
 			"mainRequire",
-			_npmResolver.resolveModuleName("triberay-vue-svg-portlet") + " as main");
+			_npmResolver.resolveModuleName("triberay-vue-treeview-portlet") + " as main");
 
 		super.doView(renderRequest, renderResponse);
 	}

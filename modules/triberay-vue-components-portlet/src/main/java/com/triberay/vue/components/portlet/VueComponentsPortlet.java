@@ -1,6 +1,6 @@
-package triberay.vue.components.portlet.portlet;
+package com.triberay.vue.components.portlet;
 
-import triberay.vue.components.portlet.constants.TriberayVueComponentsPortletKeys;
+import com.triberay.vue.components.portlet.constants.VueComponentsPortletKeys;
 
 import com.liferay.frontend.js.loader.modules.extender.npm.NPMResolver;
 import com.liferay.portal.kernel.portlet.bridges.mvc.MVCPortlet;
@@ -21,18 +21,18 @@ import org.osgi.service.component.annotations.Reference;
 @Component(
 	immediate = true,
 	property = {
-		"com.liferay.portlet.display-category=category.triberay",
+		"com.liferay.portlet.display-category=category.triberayexamples",
 		"com.liferay.portlet.instanceable=true",
 		"com.liferay.portlet.header-portlet-css=/lib/index.css",
 		"javax.portlet.init-param.template-path=/",
 		"javax.portlet.init-param.view-template=/view.jsp",
-		"javax.portlet.name=" + TriberayVueComponentsPortletKeys.TriberayVueComponents,
+		"javax.portlet.name=" + VueComponentsPortletKeys.TriberayVueComponents,
 		"javax.portlet.resource-bundle=content.Language",
 		"javax.portlet.security-role-ref=power-user,user"
 	},
 	service = Portlet.class
 )
-public class TriberayVueComponentsPortlet extends MVCPortlet {
+public class VueComponentsPortlet extends MVCPortlet {
 
 	@Override
 	public void doView(

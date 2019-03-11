@@ -1,5 +1,5 @@
 Bundle-Name: triberay-vue-svg-portlet
-Bundle-SymbolicName: triberay.vue.svg.portlet
+Bundle-SymbolicName: com.triberay.vue.svg.portlet
 Bundle-Version: 1.0.0
-Export-Package: triberay.vue.svg.portlet.constants
+Export-Package: com.triberay.vue.svg.portlet.constants
 Web-ContextPath: /triberay-vue-svg-portlet
