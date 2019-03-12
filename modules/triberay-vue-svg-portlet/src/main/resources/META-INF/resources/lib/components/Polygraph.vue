@@ -49,12 +49,12 @@
 
 <style scoped>
     polygon {
-        fill: #42b983;
+        fill: #6F9CC0;
         opacity: .75;
     }
 
     circle {
         fill: transparent;
-        stroke: #999;
+        stroke: #0f3b56;
     }
 </style>

@@ -1,5 +1,5 @@
 import Vue from 'vue/dist/vue.common';
-import App from './Main';
+import App from './components/Main';
 
 export default function(portletNamespace, stats) {
 
