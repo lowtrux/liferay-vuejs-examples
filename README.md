@@ -1,4 +1,4 @@
-# liferay-vuejs-examples
+# Vue.js Example Portlets for Liferay
 
 This project currently contains 4 example portlets: 
 - [Vue Components Portlet](modules/triberay-vue-components-portlet), showcases the use of Vue Components and dynamic component loading
