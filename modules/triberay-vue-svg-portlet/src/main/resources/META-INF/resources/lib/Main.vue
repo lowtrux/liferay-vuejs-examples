@@ -20,7 +20,7 @@
 </template>
 
 <script>
-    import Polygraph from "./Polygraph";
+    import Polygraph from "./components/Polygraph";
 
     export default {
         data: function() {
