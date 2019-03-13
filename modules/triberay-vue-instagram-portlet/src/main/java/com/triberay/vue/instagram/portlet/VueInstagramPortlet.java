@@ -26,7 +26,7 @@ import org.osgi.service.component.annotations.Reference;
 		"com.liferay.portlet.display-category=category.triberayexamples",
 		"com.liferay.fragment.entry.processor.portlet.alias=" + InstagramKeys.InstagramPortletWidgetName,
 		"com.liferay.portlet.instanceable=true",
-		"com.liferay.portlet.header-portlet-css=/css/main.css",
+		"com.liferay.portlet.header-portlet-css=/lib/index.css",
 		"javax.portlet.init-param.template-path=/",
 		"javax.portlet.init-param.view-template=/view.jsp",
 		"javax.portlet.init-param.config-template=/configuration.jsp",
