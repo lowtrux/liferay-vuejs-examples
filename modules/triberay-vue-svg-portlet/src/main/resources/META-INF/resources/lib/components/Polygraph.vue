@@ -47,14 +47,15 @@
     }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+    @import '../variables.scss';
+
     polygon {
-        fill: #6F9CC0;
-        opacity: .75;
+        fill: $triberay-light-blue;
     }
 
     circle {
         fill: transparent;
-        stroke: #0f3b56;
+        stroke: $triberay-blue;
     }
 </style>

@@ -36,7 +36,7 @@
     }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
     text {
         font-family: Helvetica Neue, Arial, sans-serif;
         font-size: 10px;

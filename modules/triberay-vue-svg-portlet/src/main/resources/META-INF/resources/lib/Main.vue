@@ -60,7 +60,9 @@
     }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+    @import './variables.scss';
+
     label {
         display: inline-block;
         margin-left: 10px;
@@ -69,7 +71,11 @@
 
     #raw {
         position: absolute;
-        top: 0;
+        top: 40px;
         left: 300px;
+        font-size: 0.9em;
+        line-height: 1.2em;
+        overflow: hidden;
+        color: $triberay-blue;
     }
 </style>
