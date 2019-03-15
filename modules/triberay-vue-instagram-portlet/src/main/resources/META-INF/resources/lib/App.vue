@@ -25,31 +25,23 @@
 <script>
   import _ from 'lodash';
   import jsonp from 'browser-jsonp';
-  import { eventBus } from './index.es';
 
   export default {
     data: function () {
       return {
-			token: '',
-			count: 5,
-			error: '',
-			feeds: ''
+        token: this.$store.state.accessToken,
+        count: 5,
+        error: '',
+        feeds: ''
       }
     },
     created() {
-        eventBus.$on('setToken', (data) => {
-            if (data.length > 0) {
-                this.token = data;
-                this.getUserFeed();
-            } else {
-                console.log('token is empty');
-            }
-        });
+      this.getUserFeed();
     },
     methods: {
         getUserFeed () {
             if (this.token) {
-                jsonp({
+              jsonp({
                     url: `https://api.instagram.com/v1/users/self/media/recent`,
                     data: { access_token: this.token, count: this.count },
                     error: error => { throw error },
