@@ -11,5 +11,4 @@ export default function(portletNamespace) {
 		template: '<App/>',
 		components: { App }
 	})
-
 }

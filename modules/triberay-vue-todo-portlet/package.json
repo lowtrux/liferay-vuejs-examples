@@ -14,7 +14,8 @@
 	"main": "lib/index.common",
 	"name": "triberay-vue-todo-portlet",
 	"scripts": {
-		"build": "vue-cli-service build --dest build/resources/main/META-INF/resources/lib --formats commonjs --target lib --name index src/main/resources/META-INF/resources/**/*.js && liferay-npm-bundler"
+		"dev": "vue-cli-service serve",
+		"build": "vue-cli-service build --formats commonjs --target lib --name index src/main/resources/META-INF/resources/**/*.js && liferay-npm-bundler"
 	},
 	"version": "1.0.0"
 }
