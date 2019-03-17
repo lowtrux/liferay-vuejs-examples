@@ -8,24 +8,17 @@
 	"devDependencies": {
 		"@babel/preset-env": "^7.3.1",
 		"@vue/cli-plugin-babel": "^3.4.1",
-		"@vue/cli-plugin-eslint": "^3.4.1",
 		"@vue/cli-service": "^3.4.1",
-		"liferay-npm-bundler": "^2.6.2",
-		"eslint": "^5.14.1",
-		"eslint-plugin-vue": "^5.2.2",
 		"vue-template-compiler": "^2.6.9",
-		"cross-env": "^5.0.5",
+		"liferay-npm-bundler": "^2.6.2",
 		"node-sass": "^4.11.0",
-		"sass-loader": "^7.1.0",
-		"webpack": "^4.29.5",
-		"webpack-cli": "^3.2.3",
-		"webpack-dev-server": "^3.2.0"
+		"sass-loader": "^7.1.0"
 	},
 	"main": "lib/main.common",
 	"name": "triberay-vue-instagram-portlet",
 	"scripts": {
-		"dev": "cross-env NODE_ENV=development webpack-dev-server --open --hot --content-base dev/",
-		"build": "vue-cli-service build --dest build/resources/main/META-INF/resources/lib --formats commonjs --target lib --name main src/main/resources/META-INF/resources/**/*.js && liferay-npm-bundler"
+		"dev": "vue-cli-service serve",
+		"build": "vue-cli-service build --formats commonjs --target lib --name main src/main/resources/META-INF/resources/**/*.js && liferay-npm-bundler"
 	},
 	"version": "1.0.0"
 }
