@@ -1,0 +1,5 @@
+Bundle-Name: triberay-vue-maps-portlet
+Bundle-SymbolicName: com.triberay.vue.maps.portlet
+Bundle-Version: 1.0.0
+Export-Package: com.triberay.vue.maps.portlet.constants
+Web-ContextPath: /triberay-vue-maps-portlet
