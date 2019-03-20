@@ -1,5 +1,7 @@
 import Vue from 'vue/dist/vue.common';
 
+Vue.config.productionTip = false;
+
 // demo data
 var data = {
 	name: 'My Tree',
