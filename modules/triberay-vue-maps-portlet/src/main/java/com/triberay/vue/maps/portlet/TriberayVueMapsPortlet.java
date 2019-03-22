@@ -1,4 +1,4 @@
-package com.triberay.vue.maps.portlet.portlet;
+package com.triberay.vue.maps.portlet;
 
 import com.triberay.vue.maps.portlet.constants.TriberayVueMapsPortletKeys;
 

@@ -5,6 +5,6 @@ package com.triberay.vue.maps.portlet.constants;
  */
 public class TriberayVueMapsPortletKeys {
 
-	public static final String TriberayVueMaps = "triberayvuemaps";
+	public static final String TriberayVueMaps = "com_triberay_vue_maps_portlet_VueMapsPortlet";
 
 }

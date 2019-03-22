@@ -1,2 +1,10 @@
 {
+    "exclude": {
+        "@mapbox/geojson-types": ["**/*.js"],
+        "cardinal": ["**/*.js"],
+        "esprima": ["test/**/*.js"],
+        "mapbox-gl": ["**/*.js"],
+        "redeyed": ["test/**/*.js"],
+        "vue": ["src/**/*.js"]
+    }
 }
