@@ -10,6 +10,15 @@ module.exports = {
             entry: 'dev/index.js',
             template: 'dev/index.html'
         }
+    },
+    css: {
+        // Enable CSS source maps.
+        sourceMap: true,
+    },
+    configureWebpack: {
+        performance: {
+            hints: false
+        }
     }
 };
 
