@@ -1,0 +1,29 @@
+version: '3.3'
+
+networks:
+  www-external:
+    internal: false
+  www-internal:
+    internal: true
+
+services:
+  liferay:
+    build:
+      context: configs/docker/.
+    networks:
+      - "www-external"
+      - "www-internal"
+    ports:
+      - "8000:8000"
+      - "8080:8080"
+      - "11311:11311"
+      - "12345:12345"
+    environment:
+      - CATALINA_OPTS="-Xdebug -Xrunjdwp:transport=dt_socket,address=8000,server=y,suspend=n"
+    volumes:
+      - "./bundles/deploy:/opt/liferay/deploy"
+      - "./bundles/osgi/modules:/opt/liferay/osgi/modules"
+      - "./bundles/osgi/war:/opt/liferay/osgi/war"
+
+volumes:
+  liferay:
