@@ -1,0 +1,5 @@
+Bundle-Name: triberay-vue-navigation-portlet
+Bundle-SymbolicName: com.triberay.vue.navigation.portlet
+Bundle-Version: 1.0.0
+Export-Package: com.triberay.vue.navigation.portlet.constants
+Web-ContextPath: /triberay-vue-navigation-portlet
