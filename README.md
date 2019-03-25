@@ -2,7 +2,7 @@
 
 # Vue.js Example Portlets for Liferay
 
-This project currently contains 4 example portlets: 
+This project currently contains 5 example portlets: 
 - [Vue Todo Portlet](modules/triberay-vue-todo-portlet), showcases the use of Vue Components. Based on the [Simple Todo App](https://codesandbox.io/s/o29j95wx9) by [Chris Fritz](https://codesandbox.io/u/chrisvfritz)
 - [Vue SVG Portlet](modules/triberay-vue-svg-portlet) based on the [Vue.js SVG Graph Example](https://vuejs.org/v2/examples/svg.html)
 - [Vue Tree View Portlet](modules/triberay-vue-treeview-portlet) based on the [Vue.js Tree View Example](https://vuejs.org/v2/examples/tree-view.html)
