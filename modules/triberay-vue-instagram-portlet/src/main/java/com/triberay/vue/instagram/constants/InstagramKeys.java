@@ -5,7 +5,7 @@ package com.triberay.vue.instagram.constants;
  */
 public class InstagramKeys {
 
-	public static final String InstagramPortletKey = "com_triberay_vue_svg_portlet_VueInstagramPortlet";
+	public static final String InstagramPortletKey = "com_triberay_vue_instagram_portlet_VueInstagramPortlet";
 
 	public static final String InstagramPortletWidgetName = "vueinstagramportlet";
 
