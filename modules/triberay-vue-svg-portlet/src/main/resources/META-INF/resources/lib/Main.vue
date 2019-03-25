@@ -1,28 +1,41 @@
 <template>
-    <div>
-        <!-- Use the component -->
-        <svg width="200" height="200">
-            <polygraph :stats="stats"></polygraph>
-        </svg>
-        <!-- controls -->
-        <div v-for="stat in stats">
-            <label>{{stat.label}}</label>
-            <input type="range" v-model="stat.value" min="0" max="100">
-            <span>{{stat.value}}</span>
-            <button @click="remove(stat)" class="remove">X</button>
-        </div>
-        <form id="add">
-            <input name="newlabel" v-model="newLabel">
-            <button @click="add">Add a Stat</button>
-        </form>
-        <pre id="raw">{{ stats }}</pre>
+  <div>
+    <!-- Use the component -->
+    <svg 
+      width="200" 
+      height="200">
+      <polygraph :stats="stats"/>
+    </svg>
+    <!-- controls -->
+    <div v-for="stat in stats">
+      <label>{{ stat.label }}</label>
+      <input 
+        v-model="stat.value" 
+        type="range" 
+        min="0" 
+        max="100">
+      <span>{{ stat.value }}</span>
+      <button 
+        class="remove" 
+        @click="remove(stat)">X</button>
     </div>
+    <form id="add">
+      <input 
+        v-model="newLabel" 
+        name="newlabel">
+      <button @click="add">Add a Stat</button>
+    </form>
+    <pre id="raw">{{ stats }}</pre>
+  </div>
 </template>
 
 <script>
     import Polygraph from "./components/Polygraph";
 
     export default {
+        components: {
+            "polygraph": Polygraph
+        },
         data: function() {
             return {
                 newLabel: '',
@@ -54,9 +67,6 @@
                 }
             }
         },
-        components: {
-            "polygraph": Polygraph
-        }
     }
 </script>
 

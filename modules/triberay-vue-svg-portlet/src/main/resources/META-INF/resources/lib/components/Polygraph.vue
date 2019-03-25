@@ -1,14 +1,16 @@
 <template>
-    <g>
-        <polygon :points="points"></polygon>
-        <circle cx="100" cy="100" r="80"></circle>
-        <axis-label
-                v-for="(stat, index) in stats"
-                :stat="stat"
-                :index="index"
-                :total="stats.length">
-        </axis-label>
-    </g>
+  <g>
+    <polygon :points="points"/>
+    <circle 
+      cx="100" 
+      cy="100" 
+      r="80"/>
+    <axis-label
+      v-for="(stat, index) in stats"
+      :stat="stat"
+      :index="index"
+      :total="stats.length"/>
+  </g>
 </template>
 
 <script>
@@ -30,6 +32,9 @@
     }
 
     export default {
+        components: {
+            "axis-label": AxisLabel
+        },
         props: ['stats'],
         computed: {
             // a computed property for the polygon's points
@@ -41,9 +46,6 @@
                 }).join(' ');
             }
         },
-        components: {
-            "axis-label": AxisLabel
-        }
     }
 </script>
 
