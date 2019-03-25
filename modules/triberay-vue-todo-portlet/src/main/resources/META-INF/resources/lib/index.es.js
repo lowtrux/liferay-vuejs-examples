@@ -1,6 +1,8 @@
-import Vue from 'vue/dist/vue.common';
-import App from './App'
+import Vue from 'vue';
+import App from './App';
+import Vuetify from 'vuetify';
 
+Vue.use(Vuetify);
 Vue.config.productionTip = false;
 
 export default function(portletNamespace) {
@@ -10,7 +12,7 @@ export default function(portletNamespace) {
 	/* eslint-disable no-new */
 	new Vue({
 		el: `#${portletNamespace}-1`,
+		components: { App },
 		template: '<App/>',
-		components: { App }
 	})
 }

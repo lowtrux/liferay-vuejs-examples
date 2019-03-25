@@ -1,8 +1,20 @@
 <template>
-    <div id="app">
-        <h1>My Todo App!</h1>
+  <v-layout row>
+    <v-flex
+      xs12
+      sm6>
+      <v-card>
+        <v-toolbar
+          color="cyan"
+          dark>
+          <v-toolbar-side-icon/>
+          <v-toolbar-title>To Do App</v-toolbar-title>
+          <v-spacer/>
+        </v-toolbar>
         <TodoList/>
-    </div>
+      </v-card>
+    </v-flex>
+  </v-layout>
 </template>
 
 <script>

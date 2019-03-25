@@ -1,29 +1,33 @@
 <template>
-    <div>
-        <BaseInputText
-                v-model="newTodoText"
-                placeholder="New todo"
-                @keydown.enter="addTodo"
-        />
-        <ul v-if="todos.length">
-            <TodoListItem
-                    v-for="todo in todos"
-                    :key="todo.id"
-                    :todo="todo"
-                    @remove="removeTodo"
-            />
-        </ul>
-        <p v-else>
-            Nothing left in the list. Add a new todo in the input above.
-        </p>
-    </div>
+  <div>
+    <BaseInputText
+      v-model="newTodoText"
+      placeholder="New todo"
+      @keydown.enter="addTodo"
+    />
+    <v-list
+      v-if="todos.length"
+      two-line>
+      <TodoListItem
+        v-for="todo in todos"
+        :key="todo.id"
+        :todo="todo"
+        @remove="removeTodo"
+      />
+    </v-list>
+    <v-alert
+      v-else
+      :value="true">
+      Nothing left in the list. Add a new todo in the input above.
+    </v-alert>
+  </div>
 </template>
 
 <script>
-    import BaseInputText from './BaseInputText.vue'
-    import TodoListItem from './TodoListItem.vue'
+    import BaseInputText from './BaseInputText.vue';
+    import TodoListItem from './TodoListItem.vue';
 
-    let nextTodoId = 1
+    let nextTodoId = 1;
 
     export default {
         components: {
@@ -50,12 +54,12 @@
         },
         methods: {
             addTodo () {
-                const trimmedText = this.newTodoText.trim()
+                const trimmedText = this.newTodoText.trim();
                 if (trimmedText) {
                     this.todos.push({
                         id: nextTodoId++,
                         text: trimmedText
-                    })
+                    });
                     this.newTodoText = ''
                 }
             },
@@ -67,3 +71,9 @@
         }
     }
 </script>
+
+<style lang="scss" scoped>
+  .v-alert {
+    color: darkslategrey;
+  }
+</style>

@@ -1,10 +1,10 @@
 <template>
-    <input
-            type="text"
-            class="input"
-            :value="value"
-            v-on="listeners"
-    >
+  <input
+    :value="value"
+    type="text"
+    class="input"
+    v-on="listeners"
+  >
 </template>
 
 <script>

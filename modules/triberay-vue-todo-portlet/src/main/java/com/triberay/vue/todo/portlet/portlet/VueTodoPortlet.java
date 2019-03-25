@@ -1,6 +1,6 @@
 package com.triberay.vue.todo.portlet.portlet;
 
-import com.triberay.vue.todo.portlet.constants.TriberayVueTodoPortletKeys;
+import com.triberay.vue.todo.portlet.constants.VueTodoPortletKeys;
 
 import com.liferay.frontend.js.loader.modules.extender.npm.NPMResolver;
 import com.liferay.portal.kernel.portlet.bridges.mvc.MVCPortlet;
@@ -26,13 +26,13 @@ import org.osgi.service.component.annotations.Reference;
 		"com.liferay.portlet.header-portlet-css=/lib/index.css",
 		"javax.portlet.init-param.template-path=/",
 		"javax.portlet.init-param.view-template=/view.jsp",
-		"javax.portlet.name=" + TriberayVueTodoPortletKeys.TriberayVueTodo,
+		"javax.portlet.name=" + VueTodoPortletKeys.TriberayVueTodo,
 		"javax.portlet.resource-bundle=content.Language",
 		"javax.portlet.security-role-ref=power-user,user"
 	},
 	service = Portlet.class
 )
-public class TriberayVueTodoPortlet extends MVCPortlet {
+public class VueTodoPortlet extends MVCPortlet {
 
 	@Override
 	public void doView(
