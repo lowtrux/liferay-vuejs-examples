@@ -47,6 +47,10 @@
                     },
                     {
                         id: nextTodoId++,
+                        text: 'Write a blog post about using Vue.js in Liferay portlets'
+                    },
+                    {
+                        id: nextTodoId++,
                         text: 'Fall in love'
                     }
                 ]

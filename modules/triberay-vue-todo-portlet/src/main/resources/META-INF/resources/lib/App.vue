@@ -1,6 +1,6 @@
 <template>
-  <v-layout 
-    id="app" 
+  <v-layout
+    id="todoApp"
     row>
     <v-flex>
       <v-card>
@@ -34,11 +34,9 @@
         box-sizing: border-box;
     }
 
-    #app {
-        max-width: 400px;
-        margin: 0 auto;
+    #todoApp {
+        max-width: 600px;
         line-height: 1.4;
-        font-family: 'Avenir', Helvetica, Arial, sans-serif;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
         color: $vue-blue;

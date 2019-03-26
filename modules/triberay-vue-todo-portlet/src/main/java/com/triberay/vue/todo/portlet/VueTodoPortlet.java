@@ -1,4 +1,4 @@
-package com.triberay.vue.todo.portlet.portlet;
+package com.triberay.vue.todo.portlet;
 
 import com.triberay.vue.todo.portlet.constants.VueTodoPortletKeys;
 
