@@ -42,7 +42,13 @@
             ],
             [
               {
-                "portletId": "com_triberay_vue_maps_portlet_VueMapsPortlet"
+                "portletId": "com_triberay_vue_maps_portlet_VueMapsPortlet",
+                "portletPreferences":
+                {
+                  "portletSetupShowBorders": "false",
+                  "portletSetupUseCustomTitle": "false",
+                  "portletSetupPortletDecoratorId": "barebone"
+                }
               }
             ]
           ]
@@ -68,7 +74,13 @@
             ],
             [
               {
-                "portletId": "com_triberay_vue_instagram_portlet_VueInstagramPortlet"
+                "portletId": "com_triberay_vue_instagram_portlet_VueInstagramPortlet",
+                "portletPreferences":
+                {
+                  "portletSetupShowBorders": "false",
+                  "portletSetupUseCustomTitle": "false",
+                  "portletSetupPortletDecoratorId": "barebone"
+                }
               }
             ]
           ]
@@ -94,7 +106,13 @@
             ],
             [
               {
-                "portletId": "com_triberay_vue_svg_portlet_VueSvgPortlet"
+                "portletId": "com_triberay_vue_svg_portlet_VueSvgPortlet",
+                "portletPreferences":
+                {
+                  "portletSetupShowBorders": "false",
+                  "portletSetupUseCustomTitle": "false",
+                  "portletSetupPortletDecoratorId": "barebone"
+                }
               }
             ]
           ]
@@ -120,7 +138,13 @@
             ],
             [
               {
-                "portletId": "com_triberay_vue_todo_portlet_VueTodoPortlet"
+                "portletId": "com_triberay_vue_todo_portlet_VueTodoPortlet",
+                "portletPreferences":
+                {
+                  "portletSetupShowBorders": "false",
+                  "portletSetupUseCustomTitle": "false",
+                  "portletSetupPortletDecoratorId": "barebone"
+                }
               }
             ]
           ]
@@ -146,7 +170,13 @@
             ],
             [
               {
-                "portletId": "com_triberay_vue_routing_portlet_VueRoutingPortlet"
+                "portletId": "com_triberay_vue_routing_portlet_VueRoutingPortlet",
+                "portletPreferences":
+                {
+                  "portletSetupShowBorders": "false",
+                  "portletSetupUseCustomTitle": "false",
+                  "portletSetupPortletDecoratorId": "barebone"
+                }
               }
             ]
           ]
@@ -172,7 +202,13 @@
             ],
             [
               {
-                "portletId": "com_triberay_vue_treeview_portlet_VueTreeViewPortlet"
+                "portletId": "com_triberay_vue_treeview_portlet_VueTreeViewPortlet",
+                "portletPreferences":
+                {
+                  "portletSetupShowBorders": "false",
+                  "portletSetupUseCustomTitle": "false",
+                  "portletSetupPortletDecoratorId": "barebone"
+                }
               }
             ]
           ]
