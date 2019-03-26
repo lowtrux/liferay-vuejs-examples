@@ -6,6 +6,8 @@ Vue.use(Vuex);
 export const store = new Vuex.Store({
     state: {
         siteLayouts: '',
-        siteUrl: ''
+        siteUrl: '',
+        currentLayoutId: 0,
+        parentLayoutId: 0
     }
 });

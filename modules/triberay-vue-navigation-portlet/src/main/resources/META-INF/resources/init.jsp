@@ -14,4 +14,6 @@
     String mainRequire = (String)renderRequest.getAttribute("mainRequire");
     String siteLayouts = (String)renderRequest.getAttribute("siteLayouts");
     String siteUrl = themeDisplay.getPathFriendlyURLPublic() + layout.getGroup().getFriendlyURL();
+    long currentLayoutId = layout.getLayoutId();
+    long parentLayoutId = layout.getParentLayoutId();
 %>

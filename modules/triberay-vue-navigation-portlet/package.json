@@ -1,11 +1,13 @@
 {
 	"dependencies": {
 		"vue": "^2.6.10",
-		"vuex": "^3.1.0"
+		"vuex": "^3.1.0",
+		"liferay-amd-loader": "^3.1.2"
 	},
 	"devDependencies": {
 		"@babel/preset-env": "^7.4.2",
 		"@vue/cli-plugin-babel": "^3.5.1",
+		"@vue/cli-plugin-eslint": "^3.5.1",
 		"@vue/cli-service": "^3.5.1",
 		"liferay-npm-bundler": "^2.6.2",
 		"node-sass": "^4.11.0",
@@ -17,6 +19,7 @@
 	"name": "triberay-vue-navigation-portlet",
 	"scripts": {
 		"dev": "vue-cli-service serve",
+		"lint": "vue-cli-service lint",
 		"build": "vue-cli-service build --formats commonjs --target lib --name index src/main/resources/META-INF/resources/**/*.js && liferay-npm-bundler"
 	},
 	"version": "1.0.0"

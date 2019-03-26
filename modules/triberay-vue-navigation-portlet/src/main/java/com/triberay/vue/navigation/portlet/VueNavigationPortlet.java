@@ -1,4 +1,4 @@
-package com.triberay.vue.navigation.portlet.portlet;
+package com.triberay.vue.navigation.portlet;
 
 import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.json.JSONArray;
@@ -7,7 +7,7 @@ import com.liferay.portal.kernel.json.JSONObject;
 import com.liferay.portal.kernel.model.Layout;
 import com.liferay.portal.kernel.service.LayoutLocalService;
 import com.liferay.portal.kernel.util.PortalUtil;
-import com.triberay.vue.navigation.portlet.constants.TriberayVueNavigationPortletKeys;
+import com.triberay.vue.navigation.portlet.constants.VueNavigationPortletKeys;
 
 import com.liferay.frontend.js.loader.modules.extender.npm.NPMResolver;
 import com.liferay.portal.kernel.portlet.bridges.mvc.MVCPortlet;
@@ -32,15 +32,18 @@ import org.osgi.service.component.annotations.Reference;
 	property = {
 		"com.liferay.portlet.display-category=category.triberayexamples",
 		"com.liferay.portlet.instanceable=true",
+		"com.liferay.portlet.header-portlet-css=/lib/index.css",
+		"com.liferay.portlet.layout-cacheable=true",
+		"com.liferay.portlet.single-page-application=true",
 		"javax.portlet.init-param.template-path=/",
 		"javax.portlet.init-param.view-template=/view.jsp",
-		"javax.portlet.name=" + TriberayVueNavigationPortletKeys.TriberayVueNavigation,
+		"javax.portlet.name=" + VueNavigationPortletKeys.TriberayVueNavigation,
 		"javax.portlet.resource-bundle=content.Language",
 		"javax.portlet.security-role-ref=power-user,user"
 	},
 	service = Portlet.class
 )
-public class TriberayVueNavigationPortlet extends MVCPortlet {
+public class VueNavigationPortlet extends MVCPortlet {
 
 	@Reference
 	private LayoutLocalService layoutLocalService;
@@ -77,7 +80,7 @@ public class TriberayVueNavigationPortlet extends MVCPortlet {
 		jsonObject.put("link", layout.getFriendlyURL(locale));
 		jsonObject.put("layoutId", layout.getLayoutId());
 		jsonObject.put("parentLayoutId", layout.getParentLayoutId());
-		jsonObject.put("icon", "dashboard");
+		jsonObject.put("hasChildren", layout.hasChildren());
 		layoutJSONArray.put(jsonObject);
 	}
 

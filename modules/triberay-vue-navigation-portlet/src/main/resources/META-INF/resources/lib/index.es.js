@@ -6,10 +6,12 @@ import { store } from './store/store';
 Vue.use(Vuetify);
 Vue.config.productionTip = false;
 
-export default function(portletNamespace, siteLayouts, siteUrl) {
+export default function(portletNamespace, siteLayouts, siteUrl, currentLayoutId, parentLayoutId) {
 
 	store.state.siteLayouts = siteLayouts;
 	store.state.siteUrl = siteUrl;
+	store.state.currentLayoutId = currentLayoutId;
+	store.state.parentLayoutId = parentLayoutId;
 
 	/* eslint-disable no-new */
 	new Vue({
