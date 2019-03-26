@@ -13,7 +13,8 @@
 		<ul v-show="open" v-if="isFolder">
 			<item
 					class="item"
-					v-for="model in model.children"
+					v-for="(model, index) in model.children"
+					:key="index"
 					:model="model">
 			</item>
 			<li class="add" @click="addChild">+</li>

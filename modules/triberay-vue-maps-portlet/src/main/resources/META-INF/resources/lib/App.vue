@@ -31,6 +31,11 @@
                         name: "Hubba Ekkamai",
                         lat: 13.725451,
                         long: 100.587596
+                    },
+                    {
+                        name: "Hub Hoi An",
+                        lat: 15.891092,
+                        long: 108.344190
                     }
                 ]
             };

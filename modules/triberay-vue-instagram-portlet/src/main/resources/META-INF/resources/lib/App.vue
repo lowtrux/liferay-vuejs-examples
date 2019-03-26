@@ -46,7 +46,6 @@
                     data: { access_token: this.token, count: this.count },
                     error: error => { throw error },
                     complete: response => {
-                        console.log('response: ' + response.meta.code);
                         if (response.meta.code === 400) {
                             console.log('error: ' + response.meta.error_message);
                             this.error = response.meta;
