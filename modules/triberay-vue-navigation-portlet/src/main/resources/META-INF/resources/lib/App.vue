@@ -52,6 +52,7 @@
 <style lang="scss" scoped>
   .v-list {
     padding: 0;
+    overflow: hidden;
   }
 </style>
 
