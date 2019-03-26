@@ -1,8 +1,8 @@
 <template>
-  <v-layout row>
-    <v-flex
-      xs12
-      sm6>
+  <v-layout 
+    id="app" 
+    row>
+    <v-flex>
       <v-card>
         <v-toolbar
           color="cyan"

@@ -7,7 +7,7 @@ describe('App component should', () => {
     const wrapper = shallowMount(App, {
       stubs: ['router-link', 'router-view']
     });
-    const contentH1 = wrapper.find('h1');
-    expect(contentH1.text()).toEqual('My Todo App!');
+    const contentH1 = wrapper.find('v-toolbar-title');
+    expect(contentH1.text()).toEqual('To Do App');
   });
 });
