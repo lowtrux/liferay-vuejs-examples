@@ -6,7 +6,9 @@
     >
       <template v-slot:activator>
         <v-list-tile>
-          <v-list-tile-title>{{ item.title }}</v-list-tile-title>
+          <v-list-tile-title><a
+            :ref="'link'+item.layoutId"
+            :href="siteUrl + item.link">{{ item.title }}</a></v-list-tile-title>
         </v-list-tile>
       </template>
       <v-divider/>
