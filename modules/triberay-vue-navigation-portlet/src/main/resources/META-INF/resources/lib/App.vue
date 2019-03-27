@@ -14,7 +14,7 @@
         <v-list>
           <navigation-item
             v-for="(item, index) in items"
-            v-if="item.parentLayoutId == 0"
+            v-if="item.parentLayoutId == 0 && (item.layoutId == currentLayoutId || item.layoutId == parentLayoutId)"
             :key="index"
             :item="item">
             <navigation-item
