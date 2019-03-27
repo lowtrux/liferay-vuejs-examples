@@ -1,8 +1,7 @@
 {
 	"dependencies": {
 		"vue": "^2.6.10",
-		"vuex": "^3.1.0",
-		"liferay-amd-loader": "^3.1.2"
+		"vuex": "^3.1.0"
 	},
 	"devDependencies": {
 		"@babel/preset-env": "^7.4.2",
