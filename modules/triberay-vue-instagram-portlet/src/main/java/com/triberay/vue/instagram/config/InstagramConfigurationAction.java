@@ -71,6 +71,6 @@ public class InstagramConfigurationAction
 	private static final Log _log = LogFactoryUtil.getLog(
 		InstagramConfigurationAction.class);
 
-	private volatile InstagramConfiguration _messageDisplayConfiguration;
+	private InstagramConfiguration _messageDisplayConfiguration;
 
 }

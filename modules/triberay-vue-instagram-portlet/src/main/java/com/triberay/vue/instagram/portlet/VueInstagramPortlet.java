@@ -61,5 +61,5 @@ public class VueInstagramPortlet extends MVCPortlet {
 	@Reference
 	private NPMResolver _npmResolver;
 
-	private volatile InstagramConfiguration _instagramConfiguration;
+	private InstagramConfiguration _instagramConfiguration;
 }
