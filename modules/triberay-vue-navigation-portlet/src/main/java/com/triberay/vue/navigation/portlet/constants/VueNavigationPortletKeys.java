@@ -1,10 +1,13 @@
 package com.triberay.vue.navigation.portlet.constants;
 
 /**
- * @author wouter
+ * @author Triberay
+ * @author Wouter Vernaillen
  */
 public class VueNavigationPortletKeys {
 
-	public static final String TriberayVueNavigation = "com_triberay_vue_navigation_portlet_VueNavigationPortlet";
+	private VueNavigationPortletKeys() {}
+
+	public static final String VUE_NAVIGATION_PORTLETKEY = "com_triberay_vue_navigation_portlet_VueNavigationPortlet";
 
 }

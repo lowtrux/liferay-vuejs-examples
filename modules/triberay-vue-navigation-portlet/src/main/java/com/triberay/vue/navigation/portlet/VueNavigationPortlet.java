@@ -4,6 +4,8 @@ import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.json.JSONArray;
 import com.liferay.portal.kernel.json.JSONFactoryUtil;
 import com.liferay.portal.kernel.json.JSONObject;
+import com.liferay.portal.kernel.log.Log;
+import com.liferay.portal.kernel.log.LogFactoryUtil;
 import com.liferay.portal.kernel.model.Layout;
 import com.liferay.portal.kernel.service.LayoutLocalService;
 import com.liferay.portal.kernel.util.PortalUtil;
@@ -25,7 +27,8 @@ import org.osgi.service.component.annotations.Component;
 import org.osgi.service.component.annotations.Reference;
 
 /**
- * @author wouter
+ * @author Triberay
+ * @author Wouter Vernaillen
  */
 @Component(
 	immediate = true,
@@ -37,13 +40,15 @@ import org.osgi.service.component.annotations.Reference;
 		"com.liferay.portlet.single-page-application=true",
 		"javax.portlet.init-param.template-path=/",
 		"javax.portlet.init-param.view-template=/view.jsp",
-		"javax.portlet.name=" + VueNavigationPortletKeys.TriberayVueNavigation,
+		"javax.portlet.name=" + VueNavigationPortletKeys.VUE_NAVIGATION_PORTLETKEY,
 		"javax.portlet.resource-bundle=content.Language",
 		"javax.portlet.security-role-ref=power-user,user"
 	},
 	service = Portlet.class
 )
 public class VueNavigationPortlet extends MVCPortlet {
+
+	private static final Log log = LogFactoryUtil.getLog(VueNavigationPortlet.class);
 
 	@Reference
 	private LayoutLocalService layoutLocalService;
@@ -64,12 +69,12 @@ public class VueNavigationPortlet extends MVCPortlet {
 			renderRequest.setAttribute("siteLayouts", layoutJSONArray.toString());
 
 		} catch (PortalException e) {
-			e.printStackTrace();
+			log.error("error retrieving layouts: " + e.getMessage(), e);
 		}
 
 		renderRequest.setAttribute(
 			"mainRequire",
-			_npmResolver.resolveModuleName("triberay-vue-navigation-portlet") + " as main");
+			npmResolver.resolveModuleName("triberay-vue-navigation-portlet") + " as main");
 
 		super.doView(renderRequest, renderResponse);
 	}
@@ -85,6 +90,6 @@ public class VueNavigationPortlet extends MVCPortlet {
 	}
 
 	@Reference
-	private NPMResolver _npmResolver;
+	private NPMResolver npmResolver;
 
 }

@@ -23,19 +23,7 @@
         },
         methods: {
             goBack() {
-                //this.$router.go(-1);
                 this.$router.push('/user/' + this.$route.params.id);
-            }
-        },
-        beforeRouteLeave(to, from, next) {
-            if (this.confirmed) {
-                next();
-            } else {
-                if (confirm('Are you sure?')) {
-                    next();
-                } else {
-                    next(false);
-                }
             }
         }
     }

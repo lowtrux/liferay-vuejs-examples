@@ -1,10 +1,13 @@
 package com.triberay.vue.routing.portlet.constants;
 
 /**
- * @author wouter
+ * @author Triberay
+ * @author Wouter Vernaillen
  */
 public class VueRoutingPortletKeys {
 
-	public static final String TriberayVueRouting = "com_triberay_vue_routing_portlet_VueRoutingPortlet";
+	private VueRoutingPortletKeys() {}
+
+	public static final String VUE_ROUTING_PORTLETKEY = "com_triberay_vue_routing_portlet_VueRoutingPortlet";
 
 }

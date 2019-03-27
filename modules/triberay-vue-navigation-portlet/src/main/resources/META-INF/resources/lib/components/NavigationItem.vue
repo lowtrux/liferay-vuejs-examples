@@ -17,12 +17,13 @@
 
     <v-list-tile
       v-else
-      :class="item.layoutId == currentLayoutId ? 'activeListItem ' + cssClass : cssClass"
-      @click="goToPage(item.layoutId)">
+      :class="cssClass"
+      @click="goToPage(item.layoutId, true)">
       <v-list-tile-content>
         <v-list-tile-title><a
           :ref="'link'+item.layoutId"
-          :href="siteUrl + item.link">{{ item.title }}</a></v-list-tile-title>
+          :href="siteUrl + item.link"
+          @click="goToPage(item.layoutId, false)">{{ item.title }}</a></v-list-tile-title>
       </v-list-tile-content>
       <v-list-tile-action>
         <v-icon>keyboard_arrow_right</v-icon>
@@ -33,6 +34,8 @@
 </template>
 
 <script>
+    import {store} from '../store/store';
+
     export default {
         props: {
             item: {
@@ -40,21 +43,32 @@
                 default: null,
                 required: false
             },
-            cssClass: {
-                type: String,
-                default: '',
+            isSubItem: {
+                type: Boolean,
+                default: false,
                 required: false
             }
         },
         data () {
             return {
-                siteUrl: this.$store.state.siteUrl,
-                currentLayoutId: this.$store.state.currentLayoutId,
+                siteUrl: store.state.siteUrl
+            }
+        },
+        computed: {
+            currentLayoutId: function() {
+                return store.state.currentLayoutId
+            },
+            cssClass: function () {
+                let subItemCssClass = this.isSubItem ? 'subItem' : '';
+                return this.currentLayoutId == this.item.layoutId ? 'activeListItem ' + subItemCssClass : subItemCssClass;
             }
         },
         methods: {
-            goToPage(layoutId) {
-              this.$refs['link'+layoutId].click()
+            goToPage(layoutId, clickLink) {
+              this.$store.state.currentLayoutId = layoutId;
+              if (clickLink) {
+                this.$refs['link' + layoutId].click();
+              }
             }
         }
     }

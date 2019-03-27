@@ -16,7 +16,8 @@ import org.osgi.service.component.annotations.Component;
 import org.osgi.service.component.annotations.Reference;
 
 /**
- * @author wouter
+ * @author Triberay
+ * @author Wouter Vernaillen
  */
 @Component(
 	immediate = true,
@@ -26,7 +27,7 @@ import org.osgi.service.component.annotations.Reference;
 		"com.liferay.portlet.header-portlet-css=/lib/index.css",
 		"javax.portlet.init-param.template-path=/",
 		"javax.portlet.init-param.view-template=/view.jsp",
-		"javax.portlet.name=" + VueTodoPortletKeys.TriberayVueTodo,
+		"javax.portlet.name=" + VueTodoPortletKeys.VUE_TODO_PORTLETKEY,
 		"javax.portlet.resource-bundle=content.Language",
 		"javax.portlet.security-role-ref=power-user,user"
 	},
@@ -41,12 +42,12 @@ public class VueTodoPortlet extends MVCPortlet {
 
 		renderRequest.setAttribute(
 			"mainRequire",
-			_npmResolver.resolveModuleName("triberay-vue-todo-portlet") + " as main");
+			npmResolver.resolveModuleName("triberay-vue-todo-portlet") + " as main");
 
 		super.doView(renderRequest, renderResponse);
 	}
 
 	@Reference
-	private NPMResolver _npmResolver;
+	private NPMResolver npmResolver;
 
 }

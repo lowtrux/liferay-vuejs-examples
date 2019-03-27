@@ -5,9 +5,10 @@ import com.triberay.vue.instagram.constants.InstagramKeys;
 
 /**
  * @author Triberay
+ * @author Wouter Vernaillen
  */
 @Meta.OCD(
-	id = InstagramKeys.InstagramConfigurationId
+	id = InstagramKeys.INSTAGRAM_CONFIGURATION_ID
 )
 public interface InstagramConfiguration {
 

@@ -2,13 +2,16 @@ package com.triberay.vue.instagram.constants;
 
 /**
  * @author Triberay
+ * @author Wouter Vernaillen
  */
 public class InstagramKeys {
 
-	public static final String InstagramPortletKey = "com_triberay_vue_instagram_portlet_VueInstagramPortlet";
+	private InstagramKeys(){}
 
-	public static final String InstagramPortletWidgetName = "vueinstagramportlet";
+	public static final String INSTAGRAM_PORTLET_KEY = "com_triberay_vue_instagram_portlet_VueInstagramPortlet";
 
-	public static final String InstagramConfigurationId = "com.triberay.vue.instagram.config.InstagramConfiguration";
+	public static final String INSTAGRAM_PORTLET_WIDGETNAME = "vueinstagramportlet";
+
+	public static final String INSTAGRAM_CONFIGURATION_ID = "com.triberay.vue.instagram.config.InstagramConfiguration";
 
 }

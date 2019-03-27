@@ -1,6 +1,6 @@
 <template>
-  <text 
-    :x="point.x" 
+  <text
+    :x="point.x"
     :y="point.y">{{ stat.label }}</text>
 </template>
 
@@ -22,9 +22,9 @@
 
     export default {
         props: {
-            stat: Object,
-            index: Number,
-            total: Number
+            stat: { type: Object, required: true },
+            index: { type: Number, required: true },
+            total: { type: Number, required: true }
         },
         computed: {
             point: function () {

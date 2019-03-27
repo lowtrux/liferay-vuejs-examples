@@ -1,14 +1,15 @@
 <template>
   <g>
     <polygon :points="points"/>
-    <circle 
-      cx="100" 
-      cy="100" 
+    <circle
+      cx="100"
+      cy="100"
       r="80"/>
     <axis-label
       v-for="(stat, index) in stats"
       :stat="stat"
       :index="index"
+      :key="index"
       :total="stats.length"/>
   </g>
 </template>
@@ -35,7 +36,9 @@
         components: {
             "axis-label": AxisLabel
         },
-        props: ['stats'],
+        props: {
+            stats: { type: Array, required: true }
+        },
         computed: {
             // a computed property for the polygon's points
             points: function () {

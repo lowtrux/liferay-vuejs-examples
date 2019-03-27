@@ -1,6 +1,6 @@
 package com.triberay.vue.maps.portlet;
 
-import com.triberay.vue.maps.portlet.constants.TriberayVueMapsPortletKeys;
+import com.triberay.vue.maps.portlet.constants.VueMapsPortletKeys;
 
 import com.liferay.frontend.js.loader.modules.extender.npm.NPMResolver;
 import com.liferay.portal.kernel.portlet.bridges.mvc.MVCPortlet;
@@ -16,7 +16,8 @@ import org.osgi.service.component.annotations.Component;
 import org.osgi.service.component.annotations.Reference;
 
 /**
- * @author wouter
+ * @author Triberay
+ * @author Wouter Vernaillen
  */
 @Component(
 	immediate = true,
@@ -27,13 +28,13 @@ import org.osgi.service.component.annotations.Reference;
 		"com.liferay.portlet.header-portlet-css=/css/mapbox-gl.css",
 		"javax.portlet.init-param.template-path=/",
 		"javax.portlet.init-param.view-template=/view.jsp",
-		"javax.portlet.name=" + TriberayVueMapsPortletKeys.TriberayVueMaps,
+		"javax.portlet.name=" + VueMapsPortletKeys.VUE_MAPS_PORTLETKEY,
 		"javax.portlet.resource-bundle=content.Language",
 		"javax.portlet.security-role-ref=power-user,user"
 	},
 	service = Portlet.class
 )
-public class TriberayVueMapsPortlet extends MVCPortlet {
+public class VueMapsPortlet extends MVCPortlet {
 
 	@Override
 	public void doView(
@@ -42,12 +43,12 @@ public class TriberayVueMapsPortlet extends MVCPortlet {
 
 		renderRequest.setAttribute(
 			"mainRequire",
-			_npmResolver.resolveModuleName("triberay-vue-maps-portlet") + " as main");
+			npmResolver.resolveModuleName("triberay-vue-maps-portlet") + " as main");
 
 		super.doView(renderRequest, renderResponse);
 	}
 
 	@Reference
-	private NPMResolver _npmResolver;
+	private NPMResolver npmResolver;
 
 }

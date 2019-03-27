@@ -21,11 +21,12 @@ import java.util.Map;
 
 /**
  * @author Triberay
+ * @author Wouter Vernaillen
  */
 @Component(
-	configurationPid = InstagramKeys.InstagramConfigurationId,
+	configurationPid = InstagramKeys.INSTAGRAM_CONFIGURATION_ID,
 	configurationPolicy = ConfigurationPolicy.OPTIONAL, immediate = true,
-	property = "javax.portlet.name=" + InstagramKeys.InstagramPortletKey,
+	property = "javax.portlet.name=" + InstagramKeys.INSTAGRAM_PORTLET_KEY,
 	service = ConfigurationAction.class
 )
 public class InstagramConfigurationAction
@@ -39,7 +40,7 @@ public class InstagramConfigurationAction
 
 		httpServletRequest.setAttribute(
 			InstagramConfiguration.class.getName(),
-			_messageDisplayConfiguration);
+			messageDisplayConfiguration);
 
 		super.include(portletConfig, httpServletRequest, httpServletResponse);
 	}
@@ -64,13 +65,13 @@ public class InstagramConfigurationAction
 	@Activate
 	@Modified
 	protected void activate(Map<Object, Object> properties) {
-		_messageDisplayConfiguration = ConfigurableUtil.createConfigurable(
+		messageDisplayConfiguration = ConfigurableUtil.createConfigurable(
 			InstagramConfiguration.class, properties);
 	}
 
 	private static final Log _log = LogFactoryUtil.getLog(
 		InstagramConfigurationAction.class);
 
-	private InstagramConfiguration _messageDisplayConfiguration;
+	private InstagramConfiguration messageDisplayConfiguration;
 
 }

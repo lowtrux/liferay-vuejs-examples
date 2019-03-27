@@ -22,7 +22,7 @@
               v-if="subItem.parentLayoutId == item.layoutId"
               :key="subIndex"
               :item="subItem"
-              :css-class="'subItem'"/>
+              :is-sub-item="true"/>
           </navigation-item>
         </v-list>
       </v-navigation-drawer>

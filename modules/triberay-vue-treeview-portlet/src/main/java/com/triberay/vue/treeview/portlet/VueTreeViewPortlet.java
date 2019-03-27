@@ -17,6 +17,7 @@ import org.osgi.service.component.annotations.Reference;
 
 /**
  * @author Triberay
+ * @author Wouter Vernaillen
  */
 @Component(
 	immediate = true,
@@ -26,7 +27,7 @@ import org.osgi.service.component.annotations.Reference;
 		"com.liferay.portlet.header-portlet-css=/css/main.css",
 		"javax.portlet.init-param.template-path=/",
 		"javax.portlet.init-param.view-template=/view.jsp",
-		"javax.portlet.name=" + VueTreeViewPortletKeys.TriberayVueTreeview,
+		"javax.portlet.name=" + VueTreeViewPortletKeys.VUE_TREEVIEW_PORTLETKEY,
 		"javax.portlet.resource-bundle=content.Language",
 		"javax.portlet.security-role-ref=power-user,user"
 	},
@@ -41,12 +42,12 @@ public class VueTreeViewPortlet extends MVCPortlet {
 
 		renderRequest.setAttribute(
 			"mainRequire",
-			_npmResolver.resolveModuleName("triberay-vue-treeview-portlet") + " as main");
+			npmResolver.resolveModuleName("triberay-vue-treeview-portlet") + " as main");
 
 		super.doView(renderRequest, renderResponse);
 	}
 
 	@Reference
-	private NPMResolver _npmResolver;
+	private NPMResolver npmResolver;
 
 }
