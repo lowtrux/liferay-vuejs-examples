@@ -5,21 +5,23 @@
       placeholder="New todo"
       @keydown.enter="addTodo"
     />
-    <v-list
+    <ul 
       v-if="todos.length"
-      two-line>
+      class="list-group">
       <TodoListItem
         v-for="todo in todos"
         :key="todo.id"
         :todo="todo"
         @remove="removeTodo"
       />
-    </v-list>
-    <v-alert
+    </ul>
+    <div
       v-else
-      :value="true">
+      :value="true" 
+      class="alert alert-secondary" 
+      role="alert">
       Nothing left in the list. Add a new todo in the input above.
-    </v-alert>
+    </div>
   </div>
 </template>
 

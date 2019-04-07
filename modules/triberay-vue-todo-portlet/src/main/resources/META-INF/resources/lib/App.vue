@@ -1,20 +1,10 @@
 <template>
-  <v-layout
-    id="todoApp"
-    row>
-    <v-flex>
-      <v-card>
-        <v-toolbar
-          color="cyan"
-          dark>
-          <v-toolbar-side-icon/>
-          <v-toolbar-title>To Do App</v-toolbar-title>
-          <v-spacer/>
-        </v-toolbar>
-        <TodoList/>
-      </v-card>
-    </v-flex>
-  </v-layout>
+  <div id="todoApp" class="card">
+    <nav class="navbar navbar-expand-lg navbar-dark primary-color card">
+      <a class="navbar-brand" href="#">To Do App</a>
+    </nav>
+    <TodoList/>
+  </div>
 </template>
 
 <script>
@@ -35,7 +25,6 @@
     }
 
     #todoApp {
-        max-width: 600px;
         line-height: 1.4;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;

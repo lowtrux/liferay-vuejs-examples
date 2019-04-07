@@ -68,9 +68,4 @@
         box-sizing: content-box;
     }
 
-    html,
-    body,
-    #app {
-        height: 100%;
-    }
 </style>

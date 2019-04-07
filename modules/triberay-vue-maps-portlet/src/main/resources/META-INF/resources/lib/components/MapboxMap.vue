@@ -42,7 +42,7 @@
 <template>
     <div
             :id="mapId"
-            :class="$style.map"
+            :class="$style.map + ' card'"
     >
         <slot/>
     </div>
