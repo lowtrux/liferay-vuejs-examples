@@ -80,13 +80,41 @@ public class VueNavigationPortlet extends MVCPortlet {
 	}
 
 	private void addLayout(Layout layout, JSONArray layoutJSONArray, Locale locale) {
-		JSONObject jsonObject = JSONFactoryUtil.createJSONObject();
-		jsonObject.put("title", layout.getHTMLTitle(locale));
-		jsonObject.put("link", layout.getFriendlyURL(locale));
-		jsonObject.put("layoutId", layout.getLayoutId());
-		jsonObject.put("parentLayoutId", layout.getParentLayoutId());
-		jsonObject.put("hasChildren", layout.hasChildren());
-		layoutJSONArray.put(jsonObject);
+	    if (!layout.isHidden()) {
+            JSONObject jsonObject = JSONFactoryUtil.createJSONObject();
+            jsonObject.put("title", layout.getHTMLTitle(locale));
+            jsonObject.put("link", layout.getFriendlyURL(locale));
+            jsonObject.put("layoutId", layout.getLayoutId());
+            jsonObject.put("parentLayoutId", layout.getParentLayoutId());
+            jsonObject.put("hasChildren", layout.hasChildren());
+            jsonObject.put("icon", defineIcon(layout, locale));
+            layoutJSONArray.put(jsonObject);
+        }
+	}
+
+	private String defineIcon(Layout layout, Locale locale) {
+		boolean parentIsVue = false;
+		try {
+			if (layout.getParentPlid() > 0) {
+				Layout parentLayout = layoutLocalService.getLayout(layout.getParentPlid());
+				parentIsVue = parentLayout.getHTMLTitle(locale).startsWith("Vue");
+			}
+		} catch (PortalException e) {
+			log.error("error retrieving parent layout: " + e.getMessage(), e);
+		}
+		if (layout.getHTMLTitle(locale).equalsIgnoreCase("Home")) {
+			return "home";
+		} else if (layout.getHTMLTitle(locale).equalsIgnoreCase("About")) {
+			return "user";
+		} else if (layout.getHTMLTitle(locale).equalsIgnoreCase("Blog")) {
+			return "blogs";
+		} else if (layout.getHTMLTitle(locale).equalsIgnoreCase("Contact")) {
+			return "envelope-open";
+		} else if (layout.getHTMLTitle(locale).startsWith("Vue") || parentIsVue) {
+			return "file-script";
+		} else {
+			return "page";
+		}
 	}
 
 	@Reference
