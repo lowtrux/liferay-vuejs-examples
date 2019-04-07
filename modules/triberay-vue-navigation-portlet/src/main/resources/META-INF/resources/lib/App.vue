@@ -4,25 +4,22 @@
     class="card"
   >
     <nav class="menubar menubar-transparent">
-      <div class="card">
-        <a
-          class="navbar-brand"
-          href="#">
-          <div class="triberayLogo" />
-        </a>
-      </div>
+      <a
+        class="navbar-brand"
+        href="#">
+        <div class="triberayLogo" />
+      </a>
       <a
         class="vueNavToggle"
         @click="vueNavToggle">
-        <clay-icon
-          :spritemap="spritemap"
-          class="vueNavToggleIconOpen"
-          symbol="product-menu-open"/>
-        <clay-icon
-          :spritemap="spritemap"
-          class="vueNavToggleIconClosed"
-          symbol="product-menu-closed"/>
+        <svg class="lexicon-icon vueNavToggleIconOpen">
+          <use :href="spritemap + '#product-menu-open'" />
+        </svg>
+        <svg class="lexicon-icon vueNavToggleIconClosed">
+          <use :href="spritemap + '#product-menu-closed'" />
+        </svg>
       </a>
+      <hr class="mt-0 mb-0">
       <ul class="nav nav-nested">
         <navigation-item
           v-for="(item, index) in items"

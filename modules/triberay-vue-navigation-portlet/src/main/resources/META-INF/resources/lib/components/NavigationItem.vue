@@ -9,24 +9,21 @@
       data-toggle="collapse"
       role="button"
       @click="goToPage(item.layoutId, item.title, true)">
-      <clay-icon
-        :spritemap="spritemap"
-        :symbol="item.icon ? item.icon : 'page'"
-        class="nav-icon"/>
+      <svg class="lexicon-icon nav-icon">
+        <use :href="spritemap + '#' + item.icon" />
+      </svg>
       <transition
         name="slide"
         type="animation"
         appear>
         <span class="nav-text">{{ item.title }}</span>
       </transition>
-      <clay-icon
-        :spritemap="spritemap"
-        class="collapse-icon-closed"
-        symbol="angle-right"/>
-      <clay-icon
-        :spritemap="spritemap"
-        class="collapse-icon-open"
-        symbol="angle-down"/>
+      <svg class="lexicon-icon collapse-icon-closed">
+        <use :href="spritemap + '#angle-right'" />
+      </svg>
+      <svg class="lexicon-icon collapse-icon-open">
+        <use :href="spritemap + '#angle-down'" />
+      </svg>
     </a>
     <div
       v-if="item.hasChildren"
@@ -41,10 +38,9 @@
       :class="cssClass"
       @click="goToPage(item.layoutId, item.title, true)"
     >
-      <clay-icon
-        :spritemap="spritemap"
-        :symbol="item.icon ? item.icon : 'page'"
-        class="nav-icon"/>
+      <svg class="lexicon-icon nav-icon">
+        <use :href="spritemap + '#' + item.icon" />
+      </svg>
       <span class="nav-text">{{ item.title }}</span>
     </a>
   </li>
@@ -111,23 +107,23 @@
 </script>
 
 <style lang="scss">
-  .nav-link .collapse-icon-open,
-  .nav-link .collapse-icon-closed,
-  .nav-link .collapse-icon-open .lexicon-icon,
-  .nav-link .collapse-icon-closed .lexicon-icon {
-    width: 0.6em;
-    height: 0.6em;
-  }
-</style>
-<style lang="scss" scoped>
-  .nav-icon {
-    padding-left: 10px;
-    padding-right: 10px;
-  }
-  .nav-nested .nav > li > a {
-    padding-left: 38px;
-  }
-  .nav-link.active {
-    background: rgba(111, 156, 192, 0.12);
+  #vueNavigation {
+    .nav-link .collapse-icon-open,
+    .nav-link .collapse-icon-closed,
+    .nav-link .collapse-icon-open .lexicon-icon,
+    .nav-link .collapse-icon-closed .lexicon-icon {
+      width: .8em;
+      height: .8em;
+      top: 22px;
+    }
+    .nav-nested .nav > li > a {
+      padding-left: 38px;
+    }
+    .nav-link.active {
+      background: rgba(111, 156, 192, 0.12);
+    }
+    .nav-link .nav-text {
+      padding-left: 10px;
+    }
   }
 </style>
