@@ -1,0 +1,11 @@
+{
+	"create-jar": {
+		"output-dir": "dist",
+		"features": {
+			"js-extender": true,
+			"web-context": "/triberay-vue-purejs-portlet",
+			"localization": "features/localization/Language"
+		}
+	},
+	"dump-report": true
+}
