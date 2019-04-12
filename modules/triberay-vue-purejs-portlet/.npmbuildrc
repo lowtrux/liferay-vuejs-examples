@@ -3,6 +3,18 @@
 	"webpack": {
 		"rules": [
 			{
+				"test": "src\\/.*\\.vue$/",
+				"loader": "vue-loader"
+            },
+            {
+                "test": "src\\/.*\\.scss$/",
+                "use": [
+                    "vue-style-loader",
+                    "css-loader",
+                    "sass-loader"
+                ]
+            },
+			{
 				"test": "src\\/.*\\.js$",
 				"use": "babel-loader"
 			}

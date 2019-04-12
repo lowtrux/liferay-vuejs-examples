@@ -1,4 +1,7 @@
 {
+    "exclude": {
+        "vue": ["src/**/*.js"]
+    },
 	"create-jar": {
 		"output-dir": "dist",
 		"features": {
