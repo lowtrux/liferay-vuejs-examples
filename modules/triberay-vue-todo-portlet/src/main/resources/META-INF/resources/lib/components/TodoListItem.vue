@@ -6,8 +6,8 @@
       @click="$emit('remove', todo.id)">
 
       <clay-icon
-          spritemap="/o/triberay-vue-theme/images/clay/icons.svg"
-          symbol="trash"/>
+        spritemap="/o/triberay-vue-theme/images/clay/icons.svg"
+        symbol="trash"/>
     </a>
   </li>
 </template>

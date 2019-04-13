@@ -1,7 +1,11 @@
 <template>
-  <div id="todoApp" class="card">
+  <div 
+    id="todoApp" 
+    class="card">
     <nav class="navbar navbar-expand-lg navbar-dark primary-color card">
-      <a class="navbar-brand" href="#">To Do App</a>
+      <a 
+        class="navbar-brand" 
+        href="#">To Do App</a>
     </nav>
     <TodoList/>
   </div>
