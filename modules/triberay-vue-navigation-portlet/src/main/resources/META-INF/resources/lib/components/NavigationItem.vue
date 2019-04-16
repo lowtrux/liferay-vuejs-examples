@@ -7,17 +7,11 @@
       :class="cssClass"
       aria-expanded="false"
       data-toggle="collapse"
-      role="button"
-      @click="goToPage(item.layoutId, item.title, true)">
+      role="button">
       <svg class="lexicon-icon nav-icon">
         <use :href="spritemap + '#' + item.icon" />
       </svg>
-      <transition
-        name="slide"
-        type="animation"
-        appear>
-        <span class="nav-text">{{ item.title }}</span>
-      </transition>
+      <span class="nav-text">{{ item.title }}</span>
       <svg class="lexicon-icon collapse-icon-closed">
         <use :href="spritemap + '#angle-right'" />
       </svg>
@@ -36,7 +30,7 @@
       :ref="'link'+item.layoutId"
       :href="siteUrl + item.link"
       :class="cssClass"
-      @click="goToPage(item.layoutId, item.title, true)"
+      @click="goToPage(true)"
     >
       <svg class="lexicon-icon nav-icon">
         <use :href="spritemap + '#' + item.icon" />
@@ -71,35 +65,31 @@
         return store.state.parentLayoutId
       },
       cssClass: function () {
-        let collapsed = this.parentLayoutId != this.item.layoutId ? 'collapsed' : '';
+        let collapsed = !this.isExpanded(this.item.layoutId) ? 'collapsed' : '';
         let collapseClass = this.item.hasChildren ? 'collapse-icon ' + collapsed : '';
         return this.currentLayoutId == this.item.layoutId ? 'nav-link active ' + collapseClass : 'nav-link ' + collapseClass
       },
       collapseCss: function () {
-        return this.parentLayoutId == this.item.layoutId ? 'collapse show' : 'collapse'
+        return this.isExpanded(this.item.layoutId) ? 'collapse show' : 'collapse'
       }
     },
     methods: {
-      goToPage (layoutId, title, clickLink) {
-        this.$store.state.currentLayoutId = layoutId;
+      isExpanded (layoutId) {
+        return (this.currentLayoutId == layoutId) || (this.parentLayoutId == layoutId);
+      },
+      goToPage (clickLink) {
+        //this.$store.state.currentLayoutId = this.item.layoutId;
 
         // code specific for nav inclusion in Triberay website
-        if (title == "Home") {
-          let vueNavDiv = document.getElementById('vueNavigation');
-          let contentDiv = document.getElementById('content');
-          let bannerDiv = document.getElementById('banner');
-          let lineWrapperDiv = document.getElementById('lineWrapper');
-
-          vueNavDiv.style.display = "none";
-          contentDiv.style.display = "none";
-          bannerDiv.style.height = "280px";
-          bannerDiv.style.minHeight = "280px";
-          lineWrapperDiv.style.height = "550px";
+        if (this.item.title == "Home") {
+          document.body.classList.add("header-big");
+        } else {
+          document.body.classList.remove("header-big");
         }
         // end Triberay website code
 
-        if (clickLink && this.$refs['link' + layoutId]) {
-          this.$refs['link' + layoutId].click()
+        if (clickLink) {
+          Liferay.SPA.app.navigate(this.siteUrl + this.item.link);
         }
       }
     }

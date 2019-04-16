@@ -2,6 +2,7 @@
   <div
     id="vueNavigation"
     class="card"
+    data-senna-off="true"
   >
     <nav class="menubar menubar-transparent">
       <a
@@ -10,17 +11,19 @@
         <div class="triberayLogo" />
       </a>
       <a
-        class="vueNavToggle"
-        @click="vueNavToggle">
-        <svg class="lexicon-icon vueNavToggleIconOpen">
-          <use :href="spritemap + '#product-menu-open'" />
-        </svg>
-        <svg class="lexicon-icon vueNavToggleIconClosed">
-          <use :href="spritemap + '#product-menu-closed'" />
+        aria-controls="menubarVerticalCollapse01"
+        aria-expanded="false"
+        data-toggle="collapse"
+        href="#menubarVerticalCollapse01"
+        role="button"
+        class="menubar-toggler vueNavToggle">
+        <svg class="lexicon-icon">
+          <use :href="spritemap + '#bars'" />
         </svg>
       </a>
       <hr class="mt-0 mb-0">
-      <ul class="nav nav-nested">
+      <div class="menubar-collapse" id="menubarVerticalCollapse01">
+        <ul class="nav nav-nested">
         <navigation-item
           v-for="(item, index) in items"
           v-if="item.parentLayoutId == 0"
@@ -38,6 +41,7 @@
           </ul>
         </navigation-item>
       </ul>
+      </div>
     </nav>
   </div>
 </template>
@@ -61,20 +65,6 @@
         mini: store.state.isMobile,
         spritemap: store.state.spritemap
       }
-    },
-    methods: {
-      vueNavToggle () {
-        let wrapperDiv = document.getElementById('wrapper');
-        if (wrapperDiv) {
-          if (wrapperDiv.classList.contains('vueNavOpen')) {
-            wrapperDiv.classList.remove('vueNavOpen');
-            wrapperDiv.classList.add('vueNavClosed');
-          } else {
-            wrapperDiv.classList.remove('vueNavClosed');
-            wrapperDiv.classList.add('vueNavOpen');
-          }
-        }
-      }
     }
   }
 </script>
@@ -87,11 +77,6 @@
     z-index: 102;
   }
   .menubar {
-    max-width: 300px;
-    > .menubar-collapse {
-      width: 300px;
-      padding-top: 5px;
-    }
     .card {
       margin-bottom: 0;
       z-index: 101;
