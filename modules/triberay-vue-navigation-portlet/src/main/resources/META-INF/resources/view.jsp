@@ -1,7 +1,7 @@
 <%@ include file="/init.jsp" %>
 
 <aui:script require="<%= mainRequire %>">
-	main.initVueApp(
+	main.default(
 	    'navapp',
 		'<%= siteLayouts %>',
 		'<%= siteUrl %>',

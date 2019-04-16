@@ -4,8 +4,7 @@ import { store } from './store'
 
 Vue.config.productionTip = false;
 
-export function initVueApp(portletNamespace, siteLayouts, siteUrl, currentLayoutId, parentLayoutId, isMobile, spritemap) {
-
+export default function (portletNamespace, siteLayouts, siteUrl, currentLayoutId, parentLayoutId, isMobile, spritemap) {
   store.state.siteLayouts = siteLayouts;
   store.state.siteUrl = siteUrl;
   store.state.currentLayoutId = currentLayoutId;
@@ -20,7 +19,7 @@ export function initVueApp(portletNamespace, siteLayouts, siteUrl, currentLayout
     template: '<App/>'
   });
 
-  //initSpaTransitions(portletNamespace);
+  initSpaTransitions(portletNamespace);
 }
 
 
