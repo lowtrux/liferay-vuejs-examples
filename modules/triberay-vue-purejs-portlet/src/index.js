@@ -21,4 +21,3 @@ export default function index({portletNamespace, contextPath, portletElementId})
 		render: h => h(App)
 	});
 }
-

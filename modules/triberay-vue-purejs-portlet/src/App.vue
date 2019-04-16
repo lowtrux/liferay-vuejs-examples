@@ -39,6 +39,7 @@
   @import './scss/variables.scss';
 
   h1 {
-    color: $triberay-light-blue
+    color: $triberay-light-blue;
+    text-decoration: underline;
   }
 </style>
