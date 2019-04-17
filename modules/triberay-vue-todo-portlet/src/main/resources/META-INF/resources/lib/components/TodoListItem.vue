@@ -5,21 +5,21 @@
       :key="todo.text"
       @click="$emit('remove', todo.id)">
 
-      <clay-icon
-        spritemap="/o/triberay-vue-theme/images/clay/icons.svg"
-        symbol="trash"/>
+      <svg class="lexicon-icon">
+        <use :href="$config.spritemap + 'trash'" />
+      </svg>
     </a>
   </li>
 </template>
 
 <script>
     export default {
-        props: {
-            todo: {
-                type: Object,
-                required: true
-            }
-        }
+      props: {
+          todo: {
+              type: Object,
+              required: true
+          }
+      }
     }
 </script>
 

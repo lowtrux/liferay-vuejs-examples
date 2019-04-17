@@ -1,8 +1,7 @@
 <template>
-  <div>
+  <div class="card">
     <BaseInputText
       v-model="newTodoText"
-      placeholder="New todo"
       @keydown.enter="addTodo"
     />
     <ul
