@@ -1,10 +1,10 @@
 <template>
-  <div 
-    id="todoApp" 
+  <div
+    id="todoApp"
     class="card">
     <nav class="navbar navbar-expand-lg navbar-dark primary-color card">
-      <a 
-        class="navbar-brand" 
+      <a
+        class="navbar-brand"
         href="#">To Do App</a>
     </nav>
     <TodoList/>
@@ -32,7 +32,7 @@
         line-height: 1.4;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
-        color: $vue-blue;
+        color: $triberay-light-blue;
     }
 
     h1 {

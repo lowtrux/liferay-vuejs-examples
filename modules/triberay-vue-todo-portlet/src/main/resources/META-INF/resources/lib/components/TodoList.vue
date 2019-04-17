@@ -5,7 +5,7 @@
       placeholder="New todo"
       @keydown.enter="addTodo"
     />
-    <ul 
+    <ul
       v-if="todos.length"
       class="list-group">
       <TodoListItem
@@ -17,8 +17,8 @@
     </ul>
     <div
       v-else
-      :value="true" 
-      class="alert alert-secondary" 
+      :value="true"
+      class="alert alert-secondary"
       role="alert">
       Nothing left in the list. Add a new todo in the input above.
     </div>
@@ -81,5 +81,8 @@
 <style lang="scss" scoped>
   .v-alert {
     color: darkslategrey;
+  }
+  .list-group {
+    margin-bottom: 0;
   }
 </style>
