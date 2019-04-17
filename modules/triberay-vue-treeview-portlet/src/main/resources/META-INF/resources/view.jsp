@@ -25,7 +25,7 @@
 <p>(You can double click on an item to turn it into a folder.)</p>
 
 <!-- the demo root element -->
-<ul id="<portlet:namespace />-tree">
+<ul id="<portlet:namespace />-tree" class="treeView">
 	<item
 			class="item"
 			:model="treeData">
