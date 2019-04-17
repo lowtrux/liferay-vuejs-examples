@@ -7,5 +7,5 @@
 </div>
 
 <aui:script require="<%= mainRequire %>">
-	main.default('<portlet:namespace />');
+	main.default('<portlet:namespace />', Liferay.ThemeDisplay.getPathThemeImages() + '/clay/icons.svg#');
 </aui:script>

@@ -1,14 +1,14 @@
 import Vue from 'vue';
 import App from './App';
 
-const vueConfig = require('vue-config');
-const configs = {
-	spritemap: Liferay.ThemeDisplay.getPathThemeImages() + '/clay/icons.svg#'
-};
-Vue.use(vueConfig, configs);
-Vue.config.productionTip = false;
+export default function(portletNamespace, spritemap) {
 
-export default function(portletNamespace) {
+	const vueConfig = require('vue-config');
+	const configs = {
+		spritemap: spritemap
+	};
+	Vue.use(vueConfig, configs);
+	Vue.config.productionTip = false;
 
 	/* eslint-disable no-new */
 	new Vue({
