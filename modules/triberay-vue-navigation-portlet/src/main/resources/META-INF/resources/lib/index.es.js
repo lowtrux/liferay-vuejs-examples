@@ -4,12 +4,11 @@ import { store } from './store'
 
 Vue.config.productionTip = false;
 
-export default function (portletNamespace, siteLayouts, siteUrl, currentLayoutId, parentLayoutId, isMobile, spritemap) {
+export default function (portletNamespace, siteLayouts, siteUrl, currentLayoutId, parentLayoutId, spritemap, enableTransitions) {
   store.state.siteLayouts = siteLayouts;
   store.state.siteUrl = siteUrl;
   store.state.currentLayoutId = currentLayoutId;
   store.state.parentLayoutId = parentLayoutId;
-  store.state.isMobile = isMobile;
   store.state.spritemap = spritemap;
 
   new Vue({
@@ -19,7 +18,9 @@ export default function (portletNamespace, siteLayouts, siteUrl, currentLayoutId
     template: '<App/>'
   });
 
-  initSpaTransitions(portletNamespace);
+  if (enableTransitions) {
+    initSpaTransitions(portletNamespace);
+  }
 }
 
 

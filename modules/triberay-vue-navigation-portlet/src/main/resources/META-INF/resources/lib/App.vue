@@ -4,43 +4,46 @@
     class="card"
     data-senna-off="true"
   >
-    <nav class="menubar menubar-transparent">
+    <nav class="navbar">
       <a
         class="navbar-brand"
         href="#">
         <div class="triberayLogo" />
       </a>
       <a
-        aria-controls="menubarVerticalCollapse01"
+        aria-controls="navbarCollapse01"
         aria-expanded="false"
         data-toggle="collapse"
-        href="#menubarVerticalCollapse01"
+        data-target="#navbarCollapse01"
+        href="#navbarCollapse01"
         role="button"
-        class="menubar-toggler vueNavToggle">
+        class="navbar-toggler pull-right">
         <svg class="lexicon-icon">
           <use :href="spritemap + '#bars'" />
         </svg>
       </a>
-      <hr class="mt-0 mb-0">
-      <div class="menubar-collapse" id="menubarVerticalCollapse01">
-        <ul class="nav nav-nested">
-        <navigation-item
-          v-for="(item, index) in items"
-          v-if="item.parentLayoutId == 0"
-          :key="index"
-          :item="item"
-        >
-          <ul class="nav nav-stacked">
-            <navigation-item
-              v-for="(subItem, subIndex) in items"
-              v-if="subItem.parentLayoutId == item.layoutId"
-              :key="subIndex"
-              :item="subItem"
-              :is-sub-item="true"
-            />
-          </ul>
-        </navigation-item>
-      </ul>
+      <!-- Collapsible content -->
+      <div
+        id="navbarCollapse01"
+        class="collapse navbar-collapse">
+        <ul class="navbar-nav mr-auto">
+          <navigation-item
+            v-for="(item, index) in items"
+            v-if="item.parentLayoutId == 0"
+            :key="index"
+            :item="item"
+          >
+            <ul class="nav nav-stacked">
+              <navigation-item
+                v-for="(subItem, subIndex) in items"
+                v-if="subItem.parentLayoutId == item.layoutId"
+                :key="subIndex"
+                :item="subItem"
+                :is-sub-item="true"
+              />
+            </ul>
+          </navigation-item>
+        </ul>
       </div>
     </nav>
   </div>
@@ -70,16 +73,14 @@
 </script>
 
 <style lang="scss" scoped>
-  .vueNavToggle {
-    position: absolute;
-    top: 27px;
-    right: 22px;
-    z-index: 102;
+  .navbar-brand {
+    min-height: 50px;
   }
-  .menubar {
-    .card {
-      margin-bottom: 0;
-      z-index: 101;
-    }
+  .navbar-toggler {
+    padding: 20px;
+    display: block;
+  }
+  .navbar-collapse .navbar-nav {
+    flex-direction: column;
   }
 </style>

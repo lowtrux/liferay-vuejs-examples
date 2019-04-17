@@ -87,6 +87,10 @@
           document.body.classList.remove("header-big");
         }
         // end Triberay website code
+        if (window.innerWidth < 768) {
+          $('#navbarCollapse01').collapse('toggle');
+        }
+        //$('#contentWrapper').fadeTo( "slow", 0 );
 
         if (clickLink) {
           Liferay.SPA.app.navigate(this.siteUrl + this.item.link);
@@ -98,20 +102,14 @@
 
 <style lang="scss">
   #vueNavigation {
-    .nav-link .collapse-icon-open,
-    .nav-link .collapse-icon-closed,
-    .nav-link .collapse-icon-open .lexicon-icon,
-    .nav-link .collapse-icon-closed .lexicon-icon {
-      width: .8em;
-      height: .8em;
-      top: 22px;
-    }
-    .nav-nested .nav > li > a {
+    .nav.nav-stacked > li > a {
       padding-left: 38px;
     }
+
     .nav-link.active {
       background: rgba(111, 156, 192, 0.12);
     }
+
     .nav-link .nav-text {
       padding-left: 10px;
     }

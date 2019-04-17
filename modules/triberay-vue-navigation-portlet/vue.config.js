@@ -4,7 +4,17 @@ module.exports = {
   outputDir: 'build/resources/main/META-INF/resources/lib',
   runtimeCompiler: true,
   devServer: {
-    port: 8088
+    port: 8088,
+    proxy: {
+      '^/o': {
+        target: 'http://localhost:8081',
+        ws: true,
+        changeOrigin: true
+      },
+      '^/foo': {
+        target: '<other_url>'
+      }
+    }
   },
   pages: {
     index: {
