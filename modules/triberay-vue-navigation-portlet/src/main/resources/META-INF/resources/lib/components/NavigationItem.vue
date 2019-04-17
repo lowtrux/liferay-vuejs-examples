@@ -89,6 +89,10 @@
         // end Triberay website code
         if (window.innerWidth < 768) {
           $('#navbarCollapse01').collapse('toggle');
+
+          $('html, body').animate({
+            scrollTop: $("#content").offset().top
+          }, 1500);
         }
         //$('#contentWrapper').fadeTo( "slow", 0 );
 
