@@ -8,20 +8,20 @@ networks:
 
 services:
   liferay:
-    build:
-      context: configs/docker/.
+    image: liferay/commerce:1.1.4
     networks:
       - "www-external"
       - "www-internal"
     ports:
-      - "8000:8000"
-      - "8080:8080"
-      - "11311:11311"
-      - "12345:12345"
+      - "8001:8000"
+      - "8081:8080"
+      - "11312:11311"
+      - "12346:12345"
     environment:
       - CATALINA_OPTS="-Xdebug -Xrunjdwp:transport=dt_socket,address=8000,server=y,suspend=n"
     volumes:
-      - "./bundles/deploy:/opt/liferay/deploy"
+      - "./configs/docker/files:/etc/liferay/mount/files"
+      - "./bundles/deploy:/etc/liferay/mount/deploy"
       - "./bundles/osgi/modules:/opt/liferay/osgi/modules"
       - "./bundles/osgi/war:/opt/liferay/osgi/war"
 
