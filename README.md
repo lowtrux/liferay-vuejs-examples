@@ -10,4 +10,5 @@ This project currently contains 7 example portlets:
 - [Vue Maps Portlet](modules/triberay-vue-maps-portlet), showcases the use of an external library like [Mapbox](https://www.mapbox.com/)
 - [Vue Routing Portlet](modules/triberay-vue-routing-portlet), use vue-routing within Liferay
 - [Vue Navigation Portlet](modules/triberay-vue-navigation-portlet), navigation tree using [Vuetify](https://vuetifyjs.com) [navigation drawer](https://vuetifyjs.com/en/components/navigation-drawers)
-
+- [Vue Apio Portlet](modules/triberay-vue-apio-portlet), shows how to call the Liferay Hypermedia REST API
+- [Vue PureJS Portlet](modules/triberay-vue-purejs-portlet) uses Liferay's [JS Portlet Extender](https://dev.liferay.com/en/develop/tutorials/-/knowledge_base/7-1/creating-and-bundling-javascript-portlets-with-javascript-tooling)
