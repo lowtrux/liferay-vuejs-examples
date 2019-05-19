@@ -2,6 +2,7 @@
   <div class="card">
     <BaseInputText
       v-model="newTodoText"
+      placeholder="New To Do"
       @keydown.enter="addTodo"
     />
     <ul

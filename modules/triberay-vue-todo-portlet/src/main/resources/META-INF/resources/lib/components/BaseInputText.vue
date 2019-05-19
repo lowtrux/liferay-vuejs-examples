@@ -1,17 +1,10 @@
 <template>
-  <div class="md-form">
-    <svg class="lexicon-icon">
-      <use :href="$config.spritemap + 'pencil'" />
-    </svg>
-    <input
-      id="input1"
-      :value="value"
-      type="text"
-      class="form-control"
-      v-on="listeners"
-    >
-    <label for="input1">New To Do</label>
-  </div>
+  <input
+    :value="value"
+    type="text"
+    class="input"
+    v-on="listeners"
+  >
 </template>
 
 <script>
@@ -38,9 +31,12 @@
 <style lang="scss" scoped>
     @import '../variables.scss';
 
-    .input {
-        padding: 8px 10px;
-        margin: 5px;
-        border: 1px solid $triberay-light-blue;
-    }
+  .input {
+    padding: 8px 10px;
+    margin: 5px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    -webkit-box-shadow: inset 2px 2px 2px 0 $triberay-light-blue;
+    -moz-box-shadow: inset 2px 2px 2px 0 $triberay-light-blue;
+    box-shadow: inset 2px 2px 2px 0 $triberay-light-blue;
+  }
 </style>
