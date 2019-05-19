@@ -1,0 +1,5 @@
+Bundle-Name: triberay-vue-apio-portlet
+Bundle-SymbolicName: com.triberay.vue.apio.portlet
+Bundle-Version: 1.0.0
+Export-Package: com.triberay.vue.apio.portlet.constants
+Web-ContextPath: /triberay-vue-apio-portlet
